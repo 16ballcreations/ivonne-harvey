@@ -1,0 +1,57 @@
+/* =====================================================================
+   Ivonne Harvey · sistema de marca personal (v0, propuesta)
+   Fuente única de colores, tipografía y medidas. Editorial y sobria:
+   papel, piedra y tinta, con un solo acento (vino), pariente lejano del
+   ciruela de SAIR para que se note la familia sin confundir las marcas.
+   ===================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=TASA+Orbiter:wght@400;500&display=swap");
+
+:root{
+  /* color */
+  --ih-tinta:#0F0E0D;        /* fondos oscuros y texto principal */
+  --ih-papel:#FAFAF9;        /* fondo de página */
+  --ih-piedra:#E7E5E1;       /* bandas y tarjetas */
+  --ih-blanco:#FFFFFF;
+  --ih-gris:#6E6A64;         /* texto secundario sobre claro (5,3 : 1) */
+  --ih-gris-claro:#8F8B85;   /* segunda línea de títulos grandes (3,3 : 1, solo 24 px o más) */
+  --ih-gris-osc:#A09C97;     /* texto secundario sobre tinta (7,0 : 1) */
+  --ih-linea:#D9D6D0;
+  --ih-linea-osc:#2A2826;
+  --ih-vino:#7B2D5B;         /* el acento: detalles, enlaces al pasar, viñetas */
+
+  /* tipografía */
+  --ih-serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --ih-sans:"TASA Orbiter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --t-display:clamp(48px, 7vw, 92px);
+  --t-h2:clamp(36px, 4.6vw, 64px);
+  --t-h3:clamp(24px, 2.4vw, 32px);
+  --t-lead:clamp(24px, 2.6vw, 36px);
+  --t-cuerpo:17px;
+  --t-chico:14px;
+
+  /* medidas */
+  --ancho:1360px;
+  --margen:clamp(20px, 3vw, 40px);
+  --r:4px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ih-papel);color:var(--ih-tinta);font:400 var(--t-cuerpo)/1.45 var(--ih-sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ih-vino);outline-offset:3px}
+
+/* títulos en serif ligera; la segunda parte, en gris */
+.serif{font-family:var(--ih-serif);font-weight:300;letter-spacing:-.03em;line-height:1.1}
+.tenue{color:var(--ih-gris-claro)}
+.oscuro .tenue{color:var(--ih-gris-osc)}
+
+/* botones: rectángulo apenas redondeado, flecha diagonal */
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--ih-sans);padding:15px 16px;border-radius:var(--r);text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s}
+.btn svg{width:12px;height:12px}
+.btn-tinta{background:var(--ih-tinta);color:var(--ih-papel)}
+.btn-tinta:hover{background:var(--ih-vino)}
+.btn-papel{background:var(--ih-papel);color:var(--ih-tinta)}
+.btn-papel:hover{background:var(--ih-piedra)}
