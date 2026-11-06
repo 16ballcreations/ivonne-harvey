@@ -1,0 +1,58 @@
+[
+  {
+    "nombre": "Global Business Experience 2026",
+    "fecha": "2026-11-07",
+    "lugar": "Universidad Continental, campus Los Olivos (Lima)",
+    "organiza": "Universidad Continental y Cámara de Comercio de Chancay",
+    "modalidad": "Presencial",
+    "rol": "Ponente",
+    "charla": "Gestión de crisis en grandes marcas, desde un enfoque comunicacional",
+    "resena": "",
+    "aprendizajes": [],
+    "enlace": "https://www.linkedin.com/in/ivonneharvey/recent-activity/all/"
+  },
+  {
+    "nombre": "Global Series · #TheConversation",
+    "fecha": "2026-10-28",
+    "lugar": "Instagram Live",
+    "organiza": "Globaltech Florida University",
+    "modalidad": "En línea",
+    "rol": "Invitada",
+    "charla": "¿Todo lo que podemos hacer, debemos hacerlo?",
+    "resena": "Una conversación sobre ética, nuestras decisiones y la responsabilidad frente a lo que la tecnología nos permite hacer, con la inteligencia artificial como telón de fondo.",
+    "aprendizajes": [],
+    "enlace": "https://www.linkedin.com/feed/update/urn:li:share:7520859135966384128/"
+  },
+  {
+    "nombre": "Moodle Moot Perú 2026",
+    "fecha": "2026-10",
+    "lugar": "Perú",
+    "organiza": "Industria Elearning",
+    "modalidad": "",
+    "rol": "Ponente",
+    "charla": "¿Videos largos, menos aprendizaje? El valor del microlearning",
+    "resena": "Un espacio de encuentro para repensar cómo diseñamos los recursos educativos digitales. Compartí experiencias sobre microlearning con docentes y equipos de educación en línea.",
+    "aprendizajes": [
+      "Innovar no es sumar más contenidos ni más tecnologías: es diseñar experiencias más significativas y flexibles.",
+      "El estudiante y su manera de aprender van en el centro del diseño.",
+      "La educación digital necesita sentido pedagógico, no solo herramientas."
+    ],
+    "enlace": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7518719665045536768/"
+  },
+  {
+    "nombre": "TEDxChancay",
+    "fecha": "2026-09",
+    "lugar": "Chancay, Perú",
+    "organiza": "TEDxChancay",
+    "modalidad": "Presencial",
+    "rol": "Líder del equipo de voluntarios",
+    "charla": "",
+    "resena": "Lideré el equipo de voluntarias y voluntarios que hizo posible el evento, por invitación de Jorge Marcos Martínez Campoblanco.",
+    "aprendizajes": [
+      "El voluntariado es un acto de servicio: personas que apuestan por hacer bien las cosas.",
+      "Liderar a un equipo de voluntarios también transforma a quien lo lidera.",
+      "Lo que se construye en comunidad resuena más allá del evento."
+    ],
+    "enlace": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7508846674413494272/"
+  }
+]

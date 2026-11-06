@@ -1,0 +1,31 @@
+/* Ivonne Harvey · enlaces (reemplaza al Linktree). Una columna, pensada para abrirse desde el móvil. */
+html{background:var(--ih-tinta-2)}
+body{min-height:100svh;background:
+  radial-gradient(70% 600px at 50% 0%, rgba(217,65,60,.24), transparent 70%),
+  linear-gradient(180deg, var(--ih-tinta) 0%, var(--ih-tinta-2) 900px) no-repeat,var(--ih-tinta-2);color:var(--ih-papel)}
+.tarjetero{width:min(100% - 32px, 560px);margin:0 auto;padding:56px 0 40px}
+.perfil{text-align:center;margin-bottom:40px}
+.avatar{width:104px;height:104px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#A9302B,var(--ih-salmon));box-shadow:0 0 0 6px rgba(217,65,60,.15)}
+.avatar span{font-size:40px;letter-spacing:-.04em;color:var(--ih-papel)}
+.perfil h1{font-size:clamp(36px,8vw,48px);margin:0 0 12px}
+.bio{font-size:15px;line-height:1.5;color:var(--ih-gris);margin:0 0 18px}
+.lema{font-size:22px;margin:0;letter-spacing:-.02em}
+.grupo{display:flex;align-items:center;gap:10px;font:500 14px/1 var(--ih-sans);color:var(--ih-gris);margin:0 0 14px;padding-top:24px;border-top:1px solid var(--ih-linea-osc)}
+.grupo img{width:28px;height:28px;border-radius:6px}
+.enlaces{list-style:none;margin:0 0 32px;padding:0;display:flex;flex-direction:column;gap:10px}
+.enlace{display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:var(--r);background:rgba(237,234,235,.06);border:1px solid var(--ih-linea-osc);text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.enlace:hover{background:rgba(237,234,235,.11);border-color:var(--ih-gris);transform:translateY(-1px)}
+.enlace.principal{background:var(--ih-salmon-osc);border-color:var(--ih-salmon-osc)}
+.enlace.principal:hover{background:#A9302B}
+.enlace.principal small{color:rgba(255,255,255,.9)}
+.en-ico{flex:none;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:rgba(237,234,235,.08)}
+.en-ico svg{width:22px;height:22px}
+.en-txt{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}
+.en-txt b{font-weight:500;font-size:16px}
+.en-txt small{font-size:13px;color:var(--ih-gris)}
+.en-fl{width:12px;height:12px;flex:none;opacity:.7}
+.sair .enlace:hover{border-color:#8A4FD0}
+.pie-enl{text-align:center;font-size:13px;color:var(--ih-gris);padding-top:12px}
+.volver{text-decoration:none;color:var(--ih-papel)}
+.volver:hover{color:var(--ih-salmon)}
+.pie-enl p{margin:10px 0 0}

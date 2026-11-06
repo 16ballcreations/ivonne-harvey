@@ -1,23 +1,30 @@
 /* =====================================================================
-   Ivonne Harvey · sistema de marca personal (v0, propuesta)
+   Ivonne Harvey · sistema de marca personal (v0.2, propuesta)
    Fuente única de colores, tipografía y medidas. Editorial y sobria:
-   papel, piedra y tinta, con un solo acento (vino), pariente lejano del
-   ciruela de SAIR para que se note la familia sin confundir las marcas.
+   grises con un matiz violeta y el salmón como acento principal. El azul
+   queda para resaltar (eventos próximos, datos puntuales), nunca de fondo.
    ===================================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=TASA+Orbiter:wght@400;500&display=swap");
 
 :root{
-  /* color */
-  --ih-tinta:#0F0E0D;        /* fondos oscuros y texto principal */
-  --ih-papel:#FAFAF9;        /* fondo de página */
-  --ih-piedra:#E7E5E1;       /* bandas y tarjetas */
+  /* paleta base (los cinco colores de la marca) */
+  --ih-tinta:#1C1A26;        /* fondos oscuros y texto principal */
+  --ih-gris:#8C8A94;         /* gris de marca: texto secundario sobre tinta (5,0 : 1), líneas, títulos grandes en claro (3,1 : 1) */
+  --ih-salmon:#D9413C;       /* el acento: láminas, detalles, titulares grandes sobre tinta (3,9 : 1, solo 24 px o más) */
+  --ih-niebla:#EDEAEB;       /* bandas y tarjetas */
+  --ih-azul:#3D81CE;         /* resaltar: eventos próximos, etiquetas puntuales (no para texto chico) */
+
+  /* derivados para cumplir contraste */
+  --ih-papel:#F7F5F6;        /* fondo de página (niebla aclarada) */
   --ih-blanco:#FFFFFF;
-  --ih-gris:#6E6A64;         /* texto secundario sobre claro (5,3 : 1) */
-  --ih-gris-claro:#8F8B85;   /* segunda línea de títulos grandes (3,3 : 1, solo 24 px o más) */
-  --ih-gris-osc:#A09C97;     /* texto secundario sobre tinta (7,0 : 1) */
-  --ih-linea:#D9D6D0;
-  --ih-linea-osc:#2A2826;
-  --ih-vino:#7B2D5B;         /* el acento: detalles, enlaces al pasar, viñetas */
+  --ih-texto-2:#5E5C66;      /* texto secundario chico sobre claro (6,0 : 1 en papel, 5,5 en niebla) */
+  --ih-cuerpo:#3A3844;       /* párrafos sobre claro */
+  --ih-gris-banda:#78767F;   /* segunda línea de títulos sobre niebla (3,7 : 1, solo 24 px o más) */
+  --ih-salmon-osc:#BF3A34;   /* botones con texto blanco (5,4 : 1), enlaces y texto chico en salmón (5,0 : 1) */
+  --ih-azul-osc:#2F6DB5;     /* texto chico en azul sobre claro (4,9 : 1) */
+  --ih-linea:#DCD8DB;
+  --ih-linea-osc:#34313F;
+  --ih-tinta-2:#121019;      /* fondo más hondo para la portada y paneles */
 
   /* tipografía */
   --ih-serif:"Newsreader", Georgia, "Times New Roman", serif;
@@ -41,17 +48,21 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--ih-papel);color:var(--ih-tinta);font:400 var(--t-cuerpo)/1.45 var(--ih-sans);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--ih-vino);outline-offset:3px}
+:focus-visible{outline:2px solid var(--ih-salmon);outline-offset:3px}
 
-/* títulos en serif ligera; la segunda parte, en gris */
+/* títulos en serif ligera; la segunda parte, en gris (o en salmón sobre tinta) */
 .serif{font-family:var(--ih-serif);font-weight:300;letter-spacing:-.03em;line-height:1.1}
-.tenue{color:var(--ih-gris-claro)}
-.oscuro .tenue{color:var(--ih-gris-osc)}
+.tenue{color:var(--ih-gris)}
+.niebla .tenue{color:var(--ih-gris-banda)}
+.oscuro .tenue{color:var(--ih-gris)}
+.acento{color:var(--ih-salmon)}
 
 /* botones: rectángulo apenas redondeado, flecha diagonal */
-.btn{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--ih-sans);padding:15px 16px;border-radius:var(--r);text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s}
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--ih-sans);padding:15px 16px;border-radius:var(--r);text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s;cursor:pointer}
 .btn svg{width:12px;height:12px}
 .btn-tinta{background:var(--ih-tinta);color:var(--ih-papel)}
-.btn-tinta:hover{background:var(--ih-vino)}
+.btn-tinta:hover{background:var(--ih-salmon-osc)}
+.btn-salmon{background:var(--ih-salmon-osc);color:var(--ih-blanco)}
+.btn-salmon:hover{background:var(--ih-tinta)}
 .btn-papel{background:var(--ih-papel);color:var(--ih-tinta)}
-.btn-papel:hover{background:var(--ih-piedra)}
+.btn-papel:hover{background:var(--ih-niebla)}
