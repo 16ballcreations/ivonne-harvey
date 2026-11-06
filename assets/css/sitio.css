@@ -13,6 +13,8 @@
 .barra nav a:not(.btn){text-decoration:none;opacity:.85}
 .barra nav a:not(.btn):hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .barra.solida .btn-papel{background:var(--ih-tinta);color:var(--ih-papel)}
+.barra .btn-salmon:hover{background:var(--ih-papel);color:var(--ih-tinta)}
+.barra.solida .btn-salmon:hover{background:var(--ih-tinta);color:var(--ih-papel)}
 
 /* portada */
 .portada{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:stretch}
@@ -24,7 +26,7 @@
 .nota-foto{position:absolute;right:var(--margen);bottom:28px;font-size:12px;color:var(--ih-gris);letter-spacing:.02em}
 .portada-in{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding-top:22vh;padding-bottom:7vh;width:100%}
 .portada-arriba{max-width:500px}
-.chip{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:999px;background:rgba(217,65,60,.22);margin-bottom:28px}
+.chip{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:999px;background:var(--ih-salmon-osc);color:#fff;margin-bottom:28px}
 .chip svg{width:14px;height:11px;transition:transform .2s}
 .chip:hover svg{transform:translateX(3px)}
 .entrada{font-size:17px;line-height:1.45;margin:0 0 26px;color:rgba(247,245,246,.92)}
@@ -32,8 +34,9 @@
 
 /* bloques */
 .bloque{padding:96px 0}
-.rotulo{font-size:14px;color:var(--ih-texto-2);margin:0 0 56px;padding-top:36px;border-top:1px solid var(--ih-linea)}
-.oscuro .rotulo{color:var(--ih-gris);border-color:var(--ih-linea-osc)}
+.rotulo{position:relative;font-size:14px;font-weight:500;color:var(--ih-salmon-osc);margin:0 0 56px;padding-top:36px;border-top:1px solid var(--ih-linea)}
+.rotulo::before{content:"";position:absolute;left:0;top:-1px;width:56px;height:3px;background:var(--ih-salmon)}
+.oscuro .rotulo{color:var(--ih-salmon);border-color:var(--ih-linea-osc)}
 .desplazado{margin-left:25%;max-width:1020px}
 .lead{font-size:var(--t-lead);line-height:1.3;letter-spacing:-.035em;margin:0 0 56px}
 .cuerpo{font-size:var(--t-cuerpo);line-height:1.45;color:var(--ih-cuerpo);max-width:530px;margin:0 0 40px}

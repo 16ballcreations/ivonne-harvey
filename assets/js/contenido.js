@@ -7,7 +7,7 @@
 (function(){
   "use strict";
   var MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-  var LAMINA = { "Tecnología":"l1", "Investigación":"l2", "Comunidad":"l3" };
+  var LAMINA = { "Tecnología":"l4", "Investigación":"l2", "Comunidad":"l3" };
   var hoy = new Date(); hoy.setHours(0,0,0,0);
 
   function esc(t){ return String(t == null ? "" : t).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
