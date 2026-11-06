@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" role="img" aria-label="Ivonne Harvey">
+  <!-- Logotipo de Ivonne Harvey · v1.0 (ver MARCA.md). Unidad X = lado del sello (64).
+       Sello en línea + nombre en TASA Orbiter 500 a 0,6 X, separados por 0,33 X. Color: #F7F5F6.
+       En imprenta, texto convertido a curvas. -->
+  <rect x="1" y="1" width="62" height="62" rx="4" fill="none" stroke="#F7F5F6" stroke-width="2"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Newsreader, Georgia, 'Times New Roman', serif" font-weight="300" font-size="30" letter-spacing="-0.6" fill="#F7F5F6">IH</text>
+  <text x="85" y="45" font-family="'TASA Orbiter', 'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="38" letter-spacing="-0.4" fill="#F7F5F6">Ivonne Harvey</text>
+</svg>

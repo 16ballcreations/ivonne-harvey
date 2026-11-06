@@ -10,7 +10,10 @@ titular en serif de dos tonos, bandas papel / niebla / tinta, acordeón y tarjet
 
 | Ruta | Qué es |
 |---|---|
-| `assets/css/marca.css` | **El sistema de marca personal**: colores, tipografía (Newsreader y TASA Orbiter), medidas y botones |
+| `MARCA.md` | **La guía de marca** (fuente de verdad para cualquier agente): esencia, logotipo, color, tipografía, el hilo, tono, imagen, redes |
+| `marca/` | El manual de marca visual (`/marca/`), v1.0 |
+| `assets/css/marca.css` | Tokens de marca: colores, tipografía (Newsreader y TASA Orbiter), medidas, el hilo y botones |
+| `assets/img/marca/` | Logotipo (tinta y papel) y sello en SVG |
 | `index.html` | Portada: quién soy, temas, lo que hago, EDUCULTEC, últimos escritos, últimos eventos y cierre |
 | `escritos/` | Vitrina del blog: todo lo publicado en LinkedIn, con filtro por tema |
 | `eventos/` | Reseñas de eventos y lo aprendido en cada uno |
@@ -87,4 +90,4 @@ visual (por ejemplo Pages CMS) sobre estos mismos JSON.
 - Aprobación de Ivonne: titular, temas, textos, reseñas de eventos (las actuales son borradores a partir de sus posts).
 - Enlaces directos de los posts que hoy apuntan a su actividad (IA y UNESCO, curso BEIC, Global Business Experience).
 - Correo público para el contacto, si lo quiere.
-- Manual de marca personal completo (`MARCA.md` y `/marca/`).
+- Aprobación del manual de marca (lo marcado «Propuesta» en `/marca/`) y lo listado en su sección 11.2.

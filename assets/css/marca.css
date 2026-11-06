@@ -1,10 +1,9 @@
 /* =====================================================================
-   Ivonne Harvey · sistema de marca personal (v0.2, propuesta)
-   Fuente única de colores, tipografía y medidas. Editorial y sobria:
-   grises con un matiz violeta y el salmón como acento principal. El azul
-   queda para resaltar (eventos próximos, datos puntuales), nunca de fondo.
+   Ivonne Harvey · tokens de marca (v1.0 · noviembre de 2026, propuesta)
+   Fuente única de colores, tipografía, medidas y del hilo. Las reglas viven en ../../MARCA.md
+   y el manual visual en ../../marca/. Un color que no está aquí no existe en la marca.
    ===================================================================== */
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=TASA+Orbiter:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300&family=TASA+Orbiter:wght@400;500&display=swap");
 
 :root{
   /* paleta base (los cinco colores de la marca) */
@@ -20,7 +19,8 @@
   --ih-texto-2:#5E5C66;      /* texto secundario chico sobre claro (6,0 : 1 en papel, 5,5 en niebla) */
   --ih-cuerpo:#3A3844;       /* párrafos sobre claro */
   --ih-gris-banda:#78767F;   /* segunda línea de títulos sobre niebla (3,7 : 1, solo 24 px o más) */
-  --ih-salmon-osc:#BF3A34;   /* botones con texto blanco (5,4 : 1), enlaces y texto chico en salmón (5,0 : 1) */
+  --ih-salmon-osc:#BF3A34;   /* botones con texto blanco (5,4 : 1), enlaces y texto chico en salmón sobre claro (5,0 : 1) */
+  --ih-salmon-claro:#E8655F; /* texto chico en salmón sobre tinta (5,3 : 1) */
   --ih-azul-osc:#2F6DB5;     /* texto chico en azul sobre claro (4,9 : 1) */
   --ih-linea:#DCD8DB;
   --ih-linea-osc:#34313F;
@@ -40,6 +40,13 @@
   --ancho:1360px;
   --margen:clamp(20px, 3vw, 40px);
   --r:4px;
+
+  /* el hilo: una línea salmón que se dibuja de izquierda a derecha, una sola vez */
+  --hilo:var(--ih-salmon);
+  --hilo-grosor:3px;         /* 1px cuando marca tiempo o un hover; 3px cuando firma una sección o una foto */
+  --hilo-largo:56px;
+  --hilo-tiempo:.9s;
+  --hilo-curva:cubic-bezier(.2,.7,.2,1);
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -56,6 +63,12 @@ a{color:inherit}
 .niebla .tenue{color:var(--ih-gris-banda)}
 .oscuro .tenue{color:var(--ih-gris)}
 .acento{color:var(--ih-salmon)}
+
+/* el hilo */
+.hilo{display:block;width:var(--hilo-largo);height:var(--hilo-grosor);background:var(--hilo);transform-origin:left center;transform:scaleX(0);transition:transform var(--hilo-tiempo) var(--hilo-curva)}
+.hilo.encendida{transform:scaleX(1)}
+html:not(.js) .hilo{transform:none}
+@media (prefers-reduced-motion:reduce){.hilo{transform:none;transition:none}}
 
 /* botones: rectángulo apenas redondeado, flecha diagonal */
 .btn{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--ih-sans);padding:15px 16px;border-radius:var(--r);text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s;cursor:pointer}
