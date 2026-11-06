@@ -18,13 +18,16 @@
 .barra.solida .btn-salmon:hover{background:var(--ih-tinta);color:var(--ih-papel)}
 
 /* portada */
-.portada{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:stretch}
+.portada{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:stretch;will-change:transform}
+main>section:not(.portada),body>footer{position:relative;z-index:2}
+main>section.bloque:not(.niebla):not(.oscuro):not(.blanco){background:var(--ih-papel)}
+.retrato img{will-change:transform;transform-origin:50% 100%}
 .fondo-portada{position:absolute;inset:0;background:
   radial-gradient(45% 70% at 30% 60%, rgba(217,65,60,.20), transparent 70%),
   linear-gradient(90deg, var(--ih-tinta-2) 0%, var(--ih-tinta) 100%)}
 /* el fondo del retrato de estudio es #8B8B8B: el panel usa ese gris para que no se vea el corte */
 .retrato{position:absolute;top:0;right:0;bottom:0;width:44%;margin:0;background:#8B8B8B;overflow:hidden;z-index:1}
-.retrato img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:auto;max-width:none}
+.retrato img{position:absolute;bottom:0;left:50%;translate:-50% 0;height:100%;width:auto;max-width:none}
 .retrato::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--ih-salmon)}
 .portada-in{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;padding-top:22vh;padding-bottom:7vh;width:100%}
 .portada-arriba{max-width:480px}
@@ -55,7 +58,8 @@
 
 /* temas y escritos */
 .tres{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px}
-.lamina{aspect-ratio:16/9;border-radius:2px;display:flex;align-items:flex-end;padding:20px;overflow:hidden;position:relative}
+.marco{overflow:hidden;border-radius:2px}
+.lamina{transition:transform .6s cubic-bezier(.2,.7,.2,1);aspect-ratio:16/9;border-radius:2px;display:flex;align-items:flex-end;padding:20px;overflow:hidden;position:relative}
 .lamina span{font-size:56px;line-height:1;font-weight:300;letter-spacing:-.04em}
 .lamina.l1{background:linear-gradient(135deg,var(--ih-tinta-2),#34313F);color:var(--ih-papel)}
 .lamina.l2{background:linear-gradient(135deg,#C9C6CD,var(--ih-niebla));color:var(--ih-tinta)}
@@ -63,33 +67,63 @@
 .lamina.l3{background:linear-gradient(135deg,#A9302B,var(--ih-salmon));color:var(--ih-papel)}
 .lamina.l4{background:linear-gradient(135deg,#25528A,var(--ih-azul));color:var(--ih-papel)}
 .lamina::after{content:"";position:absolute;right:-12%;top:-30%;width:60%;aspect-ratio:1;border:1px solid currentColor;border-radius:50%;opacity:.18}
-.tema-pie{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--ih-linea);margin-top:32px;padding-top:28px}
+.tema{display:block;text-decoration:none}
+.tema-pie{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--ih-linea);margin-top:32px;padding-top:28px}
+.tema-pie::before,.escrito::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:0;background:var(--ih-tinta);transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.tema:hover .tema-pie::before,.tema:focus-visible .tema-pie::before,.escrito:hover::before,.escrito:focus-visible::before{width:100%}
+.tema:hover .lamina,.escrito:hover .lamina{transform:scale(1.02)}
+.tema h3{transition:color .3s}
+.tema:hover h3{color:var(--ih-salmon-osc)}
 .niebla .tema-pie{border-color:#D3CFD3}
 .tema h3{font-size:24px;margin:0;letter-spacing:-.02em}
-.tema-pie svg{width:16px;height:12px;flex:none;color:var(--ih-salmon)}
+.tema-pie svg{width:16px;height:12px;flex:none;color:var(--ih-salmon);opacity:.5;transition:opacity .3s,transform .3s}
+.tema:hover .tema-pie svg{opacity:1;transform:translateX(4px)}
 .tema p{font-size:15px;color:var(--ih-texto-2);margin:12px 0 0;max-width:360px}
 
-.escrito{text-decoration:none;display:block;border-top:1px solid var(--ih-linea);padding-top:14px}
+.escrito{position:relative;text-decoration:none;display:block;border-top:1px solid var(--ih-linea);padding-top:14px}
 .escrito .cat{font-size:14px;color:var(--ih-texto-2);margin:0 0 14px}
 .escrito .fecha{font-size:14px;color:var(--ih-texto-2);margin:20px 0 12px}
 .escrito h3{font-size:24px;margin:0 0 14px;letter-spacing:-.02em;transition:color .2s}
 .escrito:hover h3{color:var(--ih-salmon-osc)}
 .escrito .resumen{font-size:15px;color:var(--ih-texto-2);margin:0;max-width:360px}
 .escrito .leer{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:14px;font-weight:500;color:var(--ih-salmon-osc)}
-.escrito .leer svg{width:10px;height:10px}
+.escrito .leer svg{width:10px;height:10px;transition:transform .3s}
+.escrito:hover .leer svg{transform:translate(2px,-2px)}
 
 /* lo que hago */
 .dos-col{display:grid;grid-template-columns:5fr 1fr 7fr;margin-top:40px}
-.acordeon{grid-column:1}
-.cita-panel{grid-column:3;margin:0;background:radial-gradient(70% 60% at 85% 10%, rgba(217,65,60,.22), transparent 70%),linear-gradient(160deg,#2A2735,var(--ih-tinta-2) 70%);border:1px solid var(--ih-linea-osc);border-radius:2px;padding:40px;display:flex;flex-direction:column;justify-content:flex-end;min-height:420px}
-.cita-panel blockquote{margin:0 0 20px;font-size:clamp(26px,2.6vw,36px);line-height:1.2}
-.cita-panel figcaption{font-size:14px;color:var(--ih-gris)}
-details{border-top:1px solid var(--ih-linea-osc);padding:22px 0}
-details:last-child{border-bottom:1px solid var(--ih-linea-osc)}
-summary{list-style:none;cursor:pointer;font-size:24px;letter-spacing:-.02em;color:var(--ih-gris);transition:color .2s}
-summary::-webkit-details-marker{display:none}
-details[open] summary,summary:hover{color:var(--ih-papel)}
-details p{font-size:15px;color:rgba(247,245,246,.78);margin:12px 0 0;max-width:420px}
+/* pasos: avanzan solos cada 5 s; la barra salmón dibuja el tiempo que le queda al paso activo */
+.lista-pasos{grid-column:1;align-self:start}
+.paso{position:relative;border-top:1px solid var(--ih-linea-osc)}
+.paso:last-child{border-bottom:1px solid var(--ih-linea-osc)}
+.paso-tit{display:block;width:100%;text-align:left;background:none;border:0;padding:22px 0;cursor:pointer;font-size:24px;letter-spacing:-.02em;color:var(--ih-gris);transition:color .3s}
+.paso-tit:hover,.paso.activo .paso-tit{color:var(--ih-papel)}
+.paso-barra{position:absolute;left:0;top:-1px;height:1px;width:0;background:var(--ih-salmon)}
+.paso.activo .paso-barra{animation:paso-avance var(--paso-ms,5000ms) linear forwards}
+.pasos.quieto .paso.activo .paso-barra{animation-play-state:paused}
+@keyframes paso-avance{from{width:0}to{width:100%}}
+.paso-cuerpo{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.paso-cuerpo>p{overflow:hidden;margin:0;font-size:15px;color:rgba(247,245,246,.78);max-width:420px}
+.paso.activo .paso-cuerpo{grid-template-rows:1fr}
+.paso.activo .paso-cuerpo>p{padding-bottom:24px}
+.paneles{grid-column:3;position:relative;min-height:460px}
+.panel{position:absolute;inset:0;margin:0;border-radius:2px;overflow:hidden;padding:36px;display:flex;flex-direction:column;color:var(--ih-papel);opacity:0;transition:opacity .6s ease}
+.panel[hidden]{display:flex;visibility:hidden}
+.panel.activo{opacity:1;visibility:visible}
+.panel.l1{background:radial-gradient(70% 60% at 85% 10%, rgba(217,65,60,.25), transparent 70%),linear-gradient(160deg,#2A2735,var(--ih-tinta-2) 70%);border:1px solid var(--ih-linea-osc)}
+.panel.l3{background:linear-gradient(150deg,#A9302B,var(--ih-salmon))}
+.panel.l4{background:linear-gradient(150deg,#25528A,var(--ih-azul))}
+/* EDUCULTEC: la portada del canal como carátula, arriba a la derecha, sobre el violeta de SAIR */
+.panel.pod{background:radial-gradient(80% 70% at 85% 15%, rgba(140,60,220,.45), transparent 70%),linear-gradient(160deg,#3B0A6B,#1A0833 75%)}
+.panel.pod img{position:absolute;top:36px;right:36px;width:min(46%,240px);aspect-ratio:1;object-fit:cover;border-radius:2px;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.panel>*{position:relative}
+.panel-rot{font-size:14px;margin:0;opacity:.85}
+.panel-cita{margin:auto 0 0;font-size:clamp(24px,2.4vw,34px);line-height:1.2;max-width:520px}
+.panel figcaption{margin-top:28px;display:flex;flex-direction:column;gap:6px}
+.panel.pod figcaption,.panel:not(:has(.panel-cita)) figcaption{margin-top:auto}
+.panel figcaption b{font-size:clamp(48px,5vw,72px);line-height:1;font-weight:300;letter-spacing:-.03em}
+.panel figcaption span{font-size:14px;opacity:.9;max-width:360px}
+.cita-quien{margin:48px 0 0;padding-left:20px;border-left:2px solid var(--ih-salmon);font-size:clamp(20px,1.8vw,26px);line-height:1.3;max-width:640px}
 
 /* EDUCULTEC */
 .bloque.blanco{padding:72px 0}
@@ -136,7 +170,7 @@ details p{font-size:15px;color:rgba(247,245,246,.78);margin:12px 0 0;max-width:4
   .desplazado{margin-left:0}
   .tres{grid-template-columns:repeat(2,1fr)}
   .dos-col{grid-template-columns:1fr;gap:40px}
-  .cita-panel{grid-column:1;min-height:300px}
+  .paneles{grid-column:1;min-height:380px}
   .tarjeta-pod{grid-template-columns:1fr}
   .pod-visual{aspect-ratio:auto;height:min(440px,100vw)}
   .barra nav a:not(.btn){display:none}
@@ -165,7 +199,7 @@ details p{font-size:15px;color:rgba(247,245,246,.78);margin:12px 0 0;max-width:4
 .sin-datos::after{content:"No se pudo cargar la lista. Recarga la página.";font-size:15px;color:var(--ih-texto-2)}
 
 /* tarjeta de evento (portada) */
-.evento-t{display:flex;flex-direction:column;text-decoration:none;background:var(--ih-papel);border-radius:2px;padding:28px;min-height:260px;border-top:3px solid var(--ih-salmon);transition:transform .25s,box-shadow .25s}
+.evento-t{position:relative;display:flex;flex-direction:column;text-decoration:none;background:var(--ih-papel);border-radius:2px;padding:28px;min-height:260px;border-top:3px solid var(--ih-salmon);transition:transform .25s,box-shadow .25s}
 .evento-t:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(28,26,38,.35)}
 .evento-t h3{font-size:26px;margin:18px 0 10px;letter-spacing:-.02em}
 .ev-fecha{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--ih-texto-2);margin:0}

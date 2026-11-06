@@ -7,7 +7,7 @@
 (function(){
   "use strict";
   var MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-  var LAMINA = { "Tecnología":"l4", "Investigación":"l2", "Comunidad":"l3" };
+  var LAMINA = { "Tecnología":"l4", "Investigación":"l1", "Comunidad":"l3" };
   var hoy = new Date(); hoy.setHours(0,0,0,0);
 
   function esc(t){ return String(t == null ? "" : t).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
@@ -25,7 +25,7 @@
   function escrito(e){
     return '<a class="escrito" data-tema="' + esc(e.tema) + '" href="' + esc(e.enlace) + '" target="_blank" rel="noopener">' +
       '<p class="cat">' + esc(e.tipo) + ' · ' + esc(e.tema) + '</p>' +
-      '<div class="lamina ' + (LAMINA[e.tema] || "l1") + '" aria-hidden="true"><span class="serif">' + esc(e.sello) + '</span></div>' +
+      '<div class="marco" aria-hidden="true"><div class="lamina ' + (LAMINA[e.tema] || "l1") + '"><span class="serif">' + esc(e.sello) + '</span></div></div>' +
       '<p class="fecha">' + fechaLarga(e.fecha) + '</p>' +
       '<h3 class="serif">' + esc(e.titulo) + '</h3>' +
       '<p class="resumen">' + esc(e.resumen) + '</p>' +
@@ -71,12 +71,17 @@
     barra.innerHTML = ['Todos'].concat(temas).map(function(t, i){
       return '<button type="button" class="filtro" aria-pressed="' + (i === 0) + '" data-tema="' + esc(t) + '">' + esc(t) + '</button>';
     }).join('');
-    barra.addEventListener('click', function(ev){
-      var b = ev.target.closest('.filtro'); if(!b){ return; }
+    function elegir(b){
       [].forEach.call(barra.children, function(x){ x.setAttribute('aria-pressed', x === b); });
       var t = b.getAttribute('data-tema');
       [].forEach.call(cont.children, function(c){ c.hidden = t !== 'Todos' && c.getAttribute('data-tema') !== t; });
+    }
+    barra.addEventListener('click', function(ev){
+      var b = ev.target.closest('.filtro'); if(b){ elegir(b); }
     });
+    /* escritos/?tema=Tecnología llega ya filtrado (desde las tarjetas de Temas) */
+    var pedido = new URLSearchParams(location.search).get('tema');
+    if(pedido){ [].forEach.call(barra.children, function(x){ if(x.getAttribute('data-tema') === pedido){ elegir(x); } }); }
   }
 
   [].forEach.call(document.querySelectorAll('[data-lista]'), function(cont){

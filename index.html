@@ -8,8 +8,8 @@
 <meta name="description" content="Ivonne Harvey, educadora e investigadora venezolana en Perú. Escribe y conversa sobre educación, tecnología, investigación y derechos humanos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="assets/css/marca.css?v=0.2.2">
-<link rel="stylesheet" href="assets/css/sitio.css?v=0.2.2">
+<link rel="stylesheet" href="assets/css/marca.css?v=0.3">
+<link rel="stylesheet" href="assets/css/sitio.css?v=0.3">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231C1A26'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23FAFAF9'%3EIH%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -49,6 +49,7 @@
       <p class="serif lead">Conecto conocimiento, innovación y personas para transformar realidades. Si volviera a nacer, sería docente otra vez: <span class="tenue">la educación es lo que me trajo hasta aquí.</span></p>
       <p class="cuerpo">Me formé en Venezuela como educadora en tecnología educativa y me doctoré en Didáctica y Organización de Instituciones Educativas en la Universidad de Sevilla. Migrar me obligó a reinventar mi vida académica y profesional lejos de casa. Hoy enseño en posgrado, investigo, co-conduzco el podcast EDUCULTEC y dirijo, junto a Saúl Lugo, SAIR Consultores.</p>
       <a class="btn btn-tinta" href="#conversemos">Conversemos <svg><use href="#diag"/></svg></a>
+      <blockquote class="cita-quien serif">«No busco que me reconozcan solamente por lo que sé o por lo que he logrado, sino también por lo que puedo aportar.»</blockquote>
     </div>
   </div>
 </section>
@@ -65,21 +66,21 @@
       <a class="btn btn-tinta" href="escritos/">Ver los escritos <svg><use href="#diag"/></svg></a>
     </div>
     <div class="tres">
-      <article class="tema">
-        <div class="lamina l4" aria-hidden="true"><span class="serif">01</span></div>
+      <a class="tema" href="escritos/?tema=Tecnología">
+        <div class="marco" aria-hidden="true"><div class="lamina l4"><span class="serif">01</span></div></div>
         <div class="tema-pie"><h3 class="serif">Tecnología con criterio pedagógico</h3><svg><use href="#der"/></svg></div>
         <p>La IA en las universidades, el microlearning y la ética de lo que podemos hacer, pero quizá no debemos.</p>
-      </article>
-      <article class="tema">
-        <div class="lamina l1" aria-hidden="true"><span class="serif">02</span></div>
+      </a>
+      <a class="tema" href="escritos/?tema=Investigación">
+        <div class="marco" aria-hidden="true"><div class="lamina l1"><span class="serif">02</span></div></div>
         <div class="tema-pie"><h3 class="serif">Investigar con sentido</h3><svg><use href="#der"/></svg></div>
         <p>Epistemología, investigación cualitativa y las decisiones que tomamos cuando construimos conocimiento.</p>
-      </article>
-      <article class="tema">
-        <div class="lamina l3" aria-hidden="true"><span class="serif">03</span></div>
+      </a>
+      <a class="tema" href="escritos/?tema=Comunidad">
+        <div class="marco" aria-hidden="true"><div class="lamina l3"><span class="serif">03</span></div></div>
         <div class="tema-pie"><h3 class="serif">Migración, derechos y comunidad</h3><svg><use href="#der"/></svg></div>
         <p>La educación como derecho, la experiencia de migrar y el voluntariado como acto de servicio.</p>
-      </article>
+      </a>
     </div>
   </div>
 </section>
@@ -95,17 +96,51 @@
         <a class="btn btn-papel" href="#conversemos">Invitarme a un espacio <svg><use href="#diag"/></svg></a>
       </div>
     </div>
-    <div class="dos-col">
-      <div class="acordeon">
-        <details open><summary class="serif">Docencia en posgrado</summary><p>Enseño investigación en escuelas de posgrado; este año cerré el curso de Bases Epistemológicas de la Investigación Cualitativa en la Universidad Continental.</p></details>
-        <details><summary class="serif">Conferencias y charlas</summary><p>Moodle Moot Perú 2026 (microlearning), Global Series de Globaltech Florida University (ética de la IA), Global Business Experience 2026 en la Universidad Continental y TEDxSurco.</p></details>
-        <details><summary class="serif">EDUCULTEC</summary><p>Co-conduzco con la Dra. Ruth Díaz Bello el podcast de SAIR Consultores. La temporada 8 conversa con investigadores sobre el rol de la epistemología, cada jueves en vivo.</p></details>
-        <details><summary class="serif">Voluntariado</summary><p>Lideré el equipo de voluntarios de TEDxChancay. El voluntariado es, para mí, una forma de servir y de seguir aprendiendo.</p></details>
+    <div class="dos-col pasos" data-pasos>
+      <div class="lista-pasos">
+        <div class="paso activo">
+          <button type="button" class="paso-tit serif" id="paso-0" aria-controls="panel-0" aria-expanded="true">Docencia en posgrado</button>
+          <span class="paso-barra" aria-hidden="true"></span>
+          <div class="paso-cuerpo"><p>Enseño investigación en escuelas de posgrado; este año cerré el curso de Bases Epistemológicas de la Investigación Cualitativa en la Universidad Continental.</p></div>
+        </div>
+        <div class="paso">
+          <button type="button" class="paso-tit serif" id="paso-1" aria-controls="panel-1" aria-expanded="false">Conferencias y charlas</button>
+          <span class="paso-barra" aria-hidden="true"></span>
+          <div class="paso-cuerpo"><p>Moodle Moot Perú 2026 (microlearning), Global Series de Globaltech Florida University (ética de la IA), Global Business Experience 2026 en la Universidad Continental y TEDxSurco.</p></div>
+        </div>
+        <div class="paso">
+          <button type="button" class="paso-tit serif" id="paso-2" aria-controls="panel-2" aria-expanded="false">EDUCULTEC</button>
+          <span class="paso-barra" aria-hidden="true"></span>
+          <div class="paso-cuerpo"><p>Co-conduzco con la Dra. Ruth Díaz Bello el podcast de SAIR Consultores. La temporada 8 conversa con investigadores sobre el rol de la epistemología, cada jueves en vivo.</p></div>
+        </div>
+        <div class="paso">
+          <button type="button" class="paso-tit serif" id="paso-3" aria-controls="panel-3" aria-expanded="false">Voluntariado</button>
+          <span class="paso-barra" aria-hidden="true"></span>
+          <div class="paso-cuerpo"><p>Lideré el equipo de voluntarios de TEDxChancay. El voluntariado es, para mí, una forma de servir y de seguir aprendiendo.</p></div>
+        </div>
       </div>
-      <figure class="cita-panel">
-        <blockquote class="serif">«No busco que me reconozcan solamente por lo que sé o por lo que he logrado, sino también por lo que puedo aportar.»</blockquote>
-        <figcaption>Ivonne Harvey</figcaption>
-      </figure>
+      <div class="paneles">
+        <figure class="panel l1 activo" id="panel-0" aria-labelledby="paso-0">
+          <p class="panel-rot">Docencia en posgrado</p>
+          <blockquote class="serif panel-cita">«Conocer no es solo medir: también es interpretar significados y escuchar experiencias.»</blockquote>
+          <figcaption><b class="serif">Posgrado</b><span>Bases Epistemológicas de la Investigación Cualitativa · Universidad Continental</span></figcaption>
+        </figure>
+        <figure class="panel l3" id="panel-1" aria-labelledby="paso-1" hidden>
+          <p class="panel-rot">Conferencias y charlas</p>
+          <blockquote class="serif panel-cita">«Innovar no es sumar contenidos: es diseñar experiencias con sentido.»</blockquote>
+          <figcaption><b class="serif">4</b><span>espacios en 2026 para conversar de microlearning, ética de la IA y comunicación</span></figcaption>
+        </figure>
+        <figure class="panel pod" id="panel-2" aria-labelledby="paso-2" hidden>
+          <img src="assets/img/educultec-sair.jpg" alt="" loading="lazy"><p class="panel-rot">EDUCULTEC</p>
+          
+          <figcaption><b class="serif">8</b><span>temporadas de conversaciones con investigadores, cada jueves en vivo</span></figcaption>
+        </figure>
+        <figure class="panel l4" id="panel-3" aria-labelledby="paso-3" hidden>
+          <p class="panel-rot">Voluntariado</p>
+          <blockquote class="serif panel-cita">«El voluntariado es un acto de amor al servicio.»</blockquote>
+          <figcaption><b class="serif">TEDx</b><span>Chancay · lideré el equipo de voluntarias y voluntarios</span></figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
@@ -186,7 +221,7 @@
     <p class="pie-nota">© 2026 · Propuesta v0.2 · Sitio por 16 Ball Creations</p>
   </div>
 </footer>
-<script src="assets/js/sitio.js?v=0.2.2"></script>
-<script src="assets/js/contenido.js?v=0.2.2"></script>
+<script src="assets/js/sitio.js?v=0.3"></script>
+<script src="assets/js/contenido.js?v=0.3"></script>
 </body>
 </html>
