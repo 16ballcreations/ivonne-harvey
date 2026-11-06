@@ -5,8 +5,8 @@ body{min-height:100svh;background:
   linear-gradient(180deg, var(--ih-tinta) 0%, var(--ih-tinta-2) 900px) no-repeat,var(--ih-tinta-2);color:var(--ih-papel)}
 .tarjetero{width:min(100% - 32px, 560px);margin:0 auto;padding:56px 0 40px}
 .perfil{text-align:center;margin-bottom:40px}
-.avatar{width:104px;height:104px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#A9302B,var(--ih-salmon));box-shadow:0 0 0 6px rgba(217,65,60,.15)}
-.avatar span{font-size:40px;letter-spacing:-.04em;color:var(--ih-papel)}
+.avatar{width:104px;height:104px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;background:#8B8B8B;box-shadow:0 0 0 3px var(--ih-salmon),0 0 0 9px rgba(217,65,60,.18)}
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
 .perfil h1{font-size:clamp(36px,8vw,48px);margin:0 0 12px}
 .bio{font-size:15px;line-height:1.5;color:var(--ih-gris);margin:0 0 18px}
 .lema{font-size:22px;margin:0;letter-spacing:-.02em}

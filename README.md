@@ -83,7 +83,7 @@ visual (por ejemplo Pages CMS) sobre estos mismos JSON.
 
 ## Pendientes
 
-- Retrato y fotos reales (portada, avatar de `enlaces/`).
+- Retrato en alta resolución (el actual es el avatar de Linktree, 772 px) y fotos en contexto: clase, escenario, EDUCULTEC, voluntariado.
 - Aprobación de Ivonne: titular, temas, textos, reseñas de eventos (las actuales son borradores a partir de sus posts).
 - Enlaces directos de los posts que hoy apuntan a su actividad (IA y UNESCO, curso BEIC, Global Business Experience).
 - Correo público para el contacto, si lo quiere.

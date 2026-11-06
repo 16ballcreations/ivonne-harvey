@@ -6,6 +6,7 @@
 
 /* barra */
 .barra{position:fixed;inset:0 0 auto;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:18px var(--margen);color:var(--ih-papel);transition:background .3s,color .3s,box-shadow .3s}
+.barra:not(.solida)::before{content:"";position:absolute;inset:0 0 -24px;z-index:-1;background:linear-gradient(180deg,rgba(18,16,25,.55),transparent);pointer-events:none}
 .barra.solida{background:rgba(247,245,246,.94);backdrop-filter:blur(10px);color:var(--ih-tinta);box-shadow:0 1px 0 var(--ih-linea)}
 .firma{display:inline-flex;align-items:center;gap:10px;font:500 18px/1 var(--ih-sans);text-decoration:none;letter-spacing:-.01em;margin:0}
 .mono{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid currentColor;border-radius:var(--r);font:400 14px/1 var(--ih-serif);letter-spacing:0}
@@ -18,14 +19,16 @@
 
 /* portada */
 .portada{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:stretch}
-.retrato{position:absolute;inset:0;background:
-  radial-gradient(55% 70% at 74% 42%, rgba(217,65,60,.26), transparent 70%),
-  radial-gradient(45% 60% at 82% 28%, rgba(237,234,235,.08), transparent 70%),
-  linear-gradient(90deg, var(--ih-tinta-2) 0%, var(--ih-tinta) 50%, #2A2735 100%)}
-.mono-grande{position:absolute;right:6%;top:50%;transform:translateY(-55%);font:300 clamp(240px,34vw,520px)/1 var(--ih-serif);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px rgba(237,234,235,.16)}
-.nota-foto{position:absolute;right:var(--margen);bottom:28px;font-size:12px;color:var(--ih-gris);letter-spacing:.02em}
-.portada-in{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding-top:22vh;padding-bottom:7vh;width:100%}
-.portada-arriba{max-width:500px}
+.fondo-portada{position:absolute;inset:0;background:
+  radial-gradient(45% 70% at 30% 60%, rgba(217,65,60,.20), transparent 70%),
+  linear-gradient(90deg, var(--ih-tinta-2) 0%, var(--ih-tinta) 100%)}
+/* el fondo del retrato de estudio es #8B8B8B: el panel usa ese gris para que no se vea el corte */
+.retrato{position:absolute;top:0;right:0;bottom:0;width:44%;margin:0;background:#8B8B8B;overflow:hidden;z-index:1}
+.retrato img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:auto;max-width:none}
+.retrato::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--ih-salmon)}
+.portada-in{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;padding-top:22vh;padding-bottom:7vh;width:100%}
+.portada-arriba{max-width:480px}
+.portada .titular{max-width:54%;font-size:clamp(44px,5.4vw,80px)}
 .chip{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:999px;background:var(--ih-salmon-osc);color:#fff;margin-bottom:28px}
 .chip svg{width:14px;height:11px;transition:transform .2s}
 .chip:hover svg{transform:translateX(3px)}
@@ -137,6 +140,12 @@ details p{font-size:15px;color:rgba(247,245,246,.78);margin:12px 0 0;max-width:4
   .tarjeta-pod{grid-template-columns:1fr}
   .pod-visual{aspect-ratio:auto;height:min(440px,100vw)}
   .barra nav a:not(.btn){display:none}
+  .barra:not(.solida){background:rgba(18,16,25,.82);backdrop-filter:blur(8px)}
+  .portada{flex-direction:column;min-height:0}
+  .retrato{position:relative;width:100%;height:min(108vw,640px);order:-1}
+  .retrato img{height:calc(100% - 72px)}
+  .portada-in{padding-top:48px;padding-bottom:64px}
+  .portada .titular{max-width:none;margin-top:48px}
 }
 /* celular */
 @media (max-width:640px){
@@ -144,9 +153,6 @@ details p{font-size:15px;color:rgba(247,245,246,.78);margin:12px 0 0;max-width:4
   .rotulo{margin-bottom:36px}
   .tres{grid-template-columns:1fr}
   .cabeza,.cabeza.dos{display:flex;flex-direction:column;align-items:flex-start}
-  .portada-in{padding-top:120px}
-  .mono-grande{right:-10%;top:30%}
-  .titular{margin-top:16vh}
   .pod-texto{padding:28px}
   .pod-cifras{grid-template-columns:1fr 1fr}
   .pie-in{grid-template-columns:1fr 1fr}
